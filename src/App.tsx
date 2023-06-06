@@ -34,9 +34,15 @@
 
 // import Message from "./Message";
 import ListGroup from "./components/ListGroup";
+import Alert from "./components/Alert";
+import { useState } from "react";
+import Button from "./components/Button";
 
 function App() {
-  return <div><ListGroup /></div>
+  const [alertVisible, setAlertVisibility] = useState(false);
+  // return <div><ListGroup /> <Alert> Hello <span>World</span></Alert></div>
+  return <div>{alertVisible && <Alert onClose={() => setAlertVisibility(false)}>My Alert</Alert>}
+    <Button onClick={() => setAlertVisibility(true)}>My App</Button></div>
 }
 
 
